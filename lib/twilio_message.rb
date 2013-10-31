@@ -16,6 +16,8 @@ class TwilioMessage
       client_code = lookup_client to_number
       send_twilio_sms client_code, from_number unless client_code.nil?
     end
+    Twilio::TwiML::Response.new do |response|
+    end.text
   end
 
   def voice_reject_message
